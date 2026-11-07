@@ -30,7 +30,7 @@ const ACCOUNTS = [
   },
 ];
 
-const url = process.env.CONVEX_SELF_HOSTED_URL || process.env.CONVEX_URL || "http://127.0.0.1:3280";
+const url = process.env.CONVEX_SELF_HOSTED_URL || process.env.CONVEX_URL || "http://127.0.0.1:3320";
 const client = new ConvexHttpClient(url);
 const ts = new Date().toISOString();
 const snap = await client.query(anyApi.store.dumpAll, {});
