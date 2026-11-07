@@ -6,7 +6,13 @@ if (( $# == 0 )); then
   exit 64
 fi
 
-export CONVEX_SELF_HOSTED_URL="${CONVEX_SELF_HOSTED_URL:-http://127.0.0.1:3280}"
+# Port comes from infra/convex-local/.env when this working copy overrides it, so the wrapper
+# always talks to THIS copy's backend and never to another clone's (or teduenglish's on 3280).
+readonly REPO_ROOT="${0:A:h:h}"
+if [[ -r "$REPO_ROOT/infra/convex-local/.env" ]]; then
+  set -a; source "$REPO_ROOT/infra/convex-local/.env"; set +a
+fi
+export CONVEX_SELF_HOSTED_URL="${CONVEX_SELF_HOSTED_URL:-http://127.0.0.1:${ACADEMY_CONVEX_PORT:-3320}}"
 if ! admin_key="$(
   security find-generic-password \
     -s vsc-academy-convex-local-admin-key \

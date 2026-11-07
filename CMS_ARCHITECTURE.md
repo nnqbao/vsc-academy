@@ -27,7 +27,7 @@ Learner Portal (/hoc-vien · /en/student)
     ↓ session cookie (admin user XOR student)
 Admin API (/api/admin/*) · Learner API (/api/learner/*)
     ↓
-Convex local (http://127.0.0.1:3280)
+Convex local (http://127.0.0.1:3320)
     ↓
 Public site VI + EN + schedule + registration
 Learner dashboard (enrollments, meetings, materials, announcements)
@@ -140,7 +140,7 @@ npm run seed
 npm start
 ```
 
-Default: `http://127.0.0.1:4173` (site + `/admin`). Convex API: `http://127.0.0.1:3280`. Dashboard: `http://127.0.0.1:6796`.
+Default: `http://127.0.0.1:4173` (site + `/admin`). Convex API: `http://127.0.0.1:3320`. Dashboard: `http://127.0.0.1:6800`.
 
 Requirements: Node 18+, Colima/Docker, write access to `uploads/`. Set `SESSION_SECRET` in production. CMS rows live in the Convex Docker volume. LaunchAgents `ai.vsc.academy.convex` and `ai.vsc.academy.web` start the stack on login/reboot.
 

@@ -11,8 +11,8 @@ Site tĩnh VSC Academy + CMS, backend **Convex self-hosted local** (cùng kiểu
 | Cổng giảng viên | http://127.0.0.1:4173/giang-vien |
 | Learner portal | http://127.0.0.1:4173/hoc-vien |
 | Certificate verify | http://127.0.0.1:4173/verify |
-| Convex API | http://127.0.0.1:3280 |
-| Convex dashboard | http://127.0.0.1:6796 |
+| Convex API | http://127.0.0.1:3320 |
+| Convex dashboard | http://127.0.0.1:6800 |
 
 Đăng nhập admin: `vutrananh97@gmail.com`, `nnqbao@gmail.com` (mật khẩu tạm riêng từ `VSC_OWNER_TEMP_PASSWORD` và `VSC_ADMIN_TEMP_PASSWORD`, bắt buộc đổi lần đầu)
 Học viên demo: `hoc-vien@vsc.academy` / `VscLearner!2026`
@@ -25,7 +25,7 @@ Hướng dẫn dùng trang quản trị (cho admin, không cần kiến thức k
 |---|---|---|
 | `SESSION_SECRET` | Production | Express session signing. If unset, CMS writes a local `cms/data/.secret` (do not commit). |
 | `PUBLIC_SITE_URL` | Required for email links | Canonical origin `https://vscacademy.edu.vn` only. Process env wins over `.env` files. |
-| `CONVEX_URL` / `CONVEX_SELF_HOSTED_URL` | Yes | Convex API, default `http://127.0.0.1:3280`. |
+| `CONVEX_URL` / `CONVEX_SELF_HOSTED_URL` | Yes | Convex API, default `http://127.0.0.1:3320`. |
 | `HOST` | No | Bind address, default `127.0.0.1`. |
 | `PORT` | No | Web port, default `4173`. |
 | `NODE_ENV` | Production plist | `production` on the LaunchAgent. |

@@ -6,7 +6,7 @@ import { anyApi } from "convex/server";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const snapshotPath = path.join(root, "cms/data/sqlite-snapshot.json");
-const url = process.env.CONVEX_SELF_HOSTED_URL || process.env.CONVEX_URL || "http://127.0.0.1:3280";
+const url = process.env.CONVEX_SELF_HOSTED_URL || process.env.CONVEX_URL || "http://127.0.0.1:3320";
 
 function normalize(snapshot) {
   const out = {};

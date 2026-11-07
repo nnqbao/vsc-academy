@@ -4,10 +4,14 @@
 set -euo pipefail
 umask 077
 
-readonly REPO="/Users/vsc_agent/projects/VSC-ACADEMY"
+readonly REPO="${0:A:h:h}"
 readonly COMPOSE_FILE="$REPO/infra/convex-local/docker-compose.yml"
 readonly DOCKER_SOCK="/Users/vsc_agent/.colima/default/docker.sock"
-readonly HEALTH_URL="http://127.0.0.1:3280/version"
+# Port from infra/convex-local/.env when this copy overrides it (see .env.example).
+if [[ -r "$REPO/infra/convex-local/.env" ]]; then
+  set -a; source "$REPO/infra/convex-local/.env"; set +a
+fi
+readonly HEALTH_URL="http://127.0.0.1:${ACADEMY_CONVEX_PORT:-3320}/version"
 readonly CHECK_INTERVAL_SEC="${VSC_ACADEMY_CONVEX_ENSURE_INTERVAL:-20}"
 readonly DOCKER_WAIT_SEC=120
 readonly HEALTH_WAIT_SEC=90

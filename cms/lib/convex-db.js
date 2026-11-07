@@ -4,7 +4,7 @@ const { anyApi } = require("convex/server");
 const CONVEX_URL =
   process.env.CONVEX_URL ||
   process.env.CONVEX_SELF_HOSTED_URL ||
-  "http://127.0.0.1:3280";
+  "http://127.0.0.1:3320";
 
 function now() {
   return new Date().toISOString();
